@@ -2,7 +2,6 @@
 console.log("Hi. Welcome to BooleanTrains");
 
 // Initialize variables
-let inp;
 let total_km;
 let passenger_age;
 
@@ -15,8 +14,7 @@ const elder_age = 65;
 const current_year = 2022;
 
 while (isNaN(passenger_age)) {
-    inp = prompt("Please enter your date of birth or age");
-    passenger_age = parseInt(inp);
+    passenger_age = parseInt(prompt("Please enter your date of birth or age"));
 }
 
 if (passenger_age > 200) {
@@ -26,8 +24,7 @@ if (passenger_age > 200) {
 console.log("Passenger age is: ", passenger_age)
 
 while (isNaN(total_km)) {
-    inp = prompt("Please, input the distance you'd like to travel (in km)");
-    total_km = parseInt(inp);
+    total_km = parseInt(prompt("Please, input the distance you'd like to travel (in km)"));
 }
 
 console.log(
@@ -46,9 +43,10 @@ else if (passenger_age > elder_age) {
 
 alert(
     `
-    The cost of the ticket is ${total_cost} 
+    The cost of the ticket is ${Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR' }).format(total_cost)} 
     `
 )
 
+document.getElementById('output').innerHTML = `The cost of the ticket is ${Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR' }).format(total_cost)}`
 
 
