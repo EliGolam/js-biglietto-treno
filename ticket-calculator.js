@@ -13,6 +13,12 @@ const elder_age = 65;
 
 const current_year = 2022;
 
+const it_lang = 'it-IT';
+const en_lang = 'en-IN';
+let current_lang = en_lang;
+
+let message; 
+
 while (isNaN(passenger_age)) {
     passenger_age = parseInt(prompt("Please enter your date of birth or age"));
 }
@@ -41,12 +47,10 @@ else if (passenger_age > elder_age) {
     total_cost *= (1 - elder_discount);
 }
 
-alert(
-    `
-    The cost of the ticket is ${Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR' }).format(total_cost)} 
-    `
-)
+message = `The cost of the ticket is ${Intl.NumberFormat(current_lang, { style: 'currency', currency: 'EUR' }).format(total_cost)}`
 
-document.getElementById('output').innerHTML = `The cost of the ticket is ${Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR' }).format(total_cost)}`
+alert(message)
+
+document.getElementById('output').innerHTML = message
 
 
